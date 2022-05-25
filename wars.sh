@@ -9,7 +9,7 @@ printf "Optional arguments for custom use:
     -b: Branch of repository
     -p: Dependencies and programs csv (local file orurl)  
     -a: AUR helper (must have pacman-like syntax)
-    -h: Show this message" && exit 1 ;
+    -h: Show this message" && exit 1 ;;
 	r) dotfilesrepo=${OPTARG} && git ls-remote "$dotfilesrepo" || exit 1 ;;
 	b) repobranch=${OPTARG} ;;
 	p) pkglist=${OPTARG} ;;
