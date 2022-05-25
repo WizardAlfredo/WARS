@@ -215,11 +215,11 @@ installationloop
 
 # This lines are crusial for bspwm
 chmod +x "/home/$name/.config/bspwm/bspwmrc"
-chmod +x "/home/$name/.config/sxhkd/sxhkd"
+chmod +x "/home/$name/.config/sxhkd/sxhkdrc"
 
 # Install the dotfiles in the user's home directory
 putgitrepo "$dotfilesrepo" "/home/$name" "$repobranch"
-rm -rf "/home/$name/README.md" "/home/$name/assets/" "home/$name/.git"
+rm -rf "/home/$name/README.md" "/home/$name/assets/" "/home/$name/.git"
 git update-index --assume-unchanged "/home/$name/README.md" "/home/$name/assets/"
 
 # Most important command! Get rid of the beep!
