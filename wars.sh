@@ -213,9 +213,13 @@ manualinstall paru || error "Failed to install AUR helper."
 # and all build dependencies are installed.
 installationloop
 
+# This lines are crusial for bspwm
+chmod +x "/home/$name/.config/bspwm/bspwmrc"
+chmod +x "/home/$name/.config/sxhkd/sxhkd"
+
 # Install the dotfiles in the user's home directory
 putgitrepo "$dotfilesrepo" "/home/$name" "$repobranch"
-rm -rf "/home/$name/README.md" "/home/$name/assets/"
+rm -rf "/home/$name/README.md" "/home/$name/assets/" "home/$name/.git"
 git update-index --assume-unchanged "/home/$name/README.md" "/home/$name/assets/"
 
 # Most important command! Get rid of the beep!
@@ -224,6 +228,11 @@ systembeepoff
 # Make zsh the default shell for the user.
 chsh -s /bin/zsh "$name" >/dev/null 2>&1
 sudo -u "$name" mkdir -p "/home/$name/.cache/zsh/"
+
+# Fix the exa error
+```bash
+cat "/usr/share/zoneinfo/Europe/Athens" > "/etc/localtime"
+```
 
 # Fix fluidsynth/pulseaudio issue.
 grep -q "OTHER_OPTS='-a pulseaudio -m alsa_seq -r 48000'" /etc/conf.d/fluidsynth ||
