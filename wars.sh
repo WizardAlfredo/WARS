@@ -4,7 +4,7 @@
 ### OPTIONS AND VARIABLES ###
 
 while getopts ":a:r:b:p:h" o; do case "${o}" in
-printf "Optional arguments for custom use:
+    h) printf "Optional arguments for custom use:
     -r: Dotfiles repository (local file or url)
     -b: Branch of repository
     -p: Dependencies and programs csv (local file orurl)  
