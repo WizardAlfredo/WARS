@@ -5,8 +5,10 @@
 On an Arch-based distribution as root, run the following:
 
 ```
-curl -LO larbs.xyz/larbs.sh
-sh larbs.sh
+git clone https://github.com/WizardAlfredo/WARS.git
+git checkout pc-retro
+cd WARS
+sh wars.sh
 ```
 
 That's it.

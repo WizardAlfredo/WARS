@@ -17,8 +17,8 @@ printf "Optional arguments for custom use:
 	*) printf "Invalid option: -%s\\n" "$OPTARG" && exit 1 ;;
 esac done
 
-[ -z "$dotfilesrepo" ] && dotfilesrepo="https://github.com/WizardAlfredo/.dotfiles"
-[ -z "$pkglist" ] && pkglist="https://raw.githubusercontent.com/WizardAlfredo/.dotfiles/pkglist.csv"
+[ -z "$dotfilesrepo" ] && dotfilesrepo="https://github.com/WizardAlfredo/dotfiles"
+[ -z "$pkglist" ] && pkglist="https://raw.githubusercontent.com/WizardAlfredo/WARS/pc-retro/pkglist.csv"
 [ -z "$aurhelper" ] && aurhelper="paru"
 [ -z "$repobranch" ] && repobranch="retro-pc"
 
