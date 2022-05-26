@@ -14,7 +14,7 @@ G,https://github.com/wmutils/opt.git, "lets you draw the double borders on bspwm
 ,libnotify,                 "allows desktop notifications."
 ,kitty,                     "is a fast GPU based terminal"
 A,zsh-fast-syntax-highlighting-git,"provides syntax highlighting in the shell."
-,zsh-autotsuggestions,      "provides suggestions in the shell"
+,zsh-autosuggestions,      "provides suggestions in the shell"
 A,gitstatus,                 "is a Git status for Bash and Zsh prompt"
 ,zoxide,                    "is a smarter cd command"
 ,bat,                       "can highlight code output and display files."

@@ -213,10 +213,6 @@ manualinstall paru || error "Failed to install AUR helper."
 # and all build dependencies are installed.
 installationloop
 
-# This lines are crusial for bspwm
-sudo -u "$name" chmod +x "/home/$name/.config/bspwm/bspwmrc"
-sudo -u "$name" chmod +x "/home/$name/.config/sxhkd/sxhkdrc"
-
 # Install the dotfiles in the user's home directory
 putgitrepo "$dotfilesrepo" "/home/$name" "$repobranch"
 rm -rf "/home/$name/README.md" "/home/$name/assets/" "/home/$name/.git"
@@ -229,12 +225,16 @@ systembeepoff
 chsh -s /bin/zsh "$name" >/dev/null 2>&1
 sudo -u "$name" mkdir -p "/home/$name/.cache/zsh/"
 
+# This lines are crusial for bspwm
+sudo -u "$name" chmod +x "/home/$name/.config/bspwm/bspwmrc"
+sudo -u "$name" chmod +x "/home/$name/.config/sxhkd/sxhkdrc"
+
 # Configure wallpaper and flameshot folders 
 sudo -u "$name" mv "/home/$name/wallpapers"  "/home/$name/pictures/"
 sudo -u "$name" mkdir -p "/home/$name/pictures/captures/"
 
 # Fix the exa error
-sudo cp "/usr/share/zoneinfo/Europe/Athens" "/etc/localtime"
+cp "/usr/share/zoneinfo/Europe/Athens" "/etc/localtime"
 
 # Fix fluidsynth/pulseaudio issue.
 grep -q "OTHER_OPTS='-a pulseaudio -m alsa_seq -r 48000'" /etc/conf.d/fluidsynth ||
