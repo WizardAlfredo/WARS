@@ -234,7 +234,7 @@ sudo -u "$name" mv "/home/$name/wallpapers"  "/home/$name/pictures/"
 sudo -u "$name" mkdir -p "/home/$name/pictures/captures/"
 
 # Fix the exa error
-sudo -u "$name" cat "/usr/share/zoneinfo/Europe/Athens" > "/etc/localtime"
+sudo cp "/usr/share/zoneinfo/Europe/Athens" "/etc/localtime"
 
 # Fix fluidsynth/pulseaudio issue.
 grep -q "OTHER_OPTS='-a pulseaudio -m alsa_seq -r 48000'" /etc/conf.d/fluidsynth ||
