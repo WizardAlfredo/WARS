@@ -230,8 +230,10 @@ sudo -u "$name" chmod +x "/home/$name/.config/bspwm/bspwmrc"
 sudo -u "$name" chmod +x "/home/$name/.config/sxhkd/sxhkdrc"
 
 # Configure wallpaper and flameshot folders 
-sudo -u "$name" mv "/home/$name/wallpapers"  "/home/$name/pictures/"
 sudo -u "$name" mkdir -p "/home/$name/pictures/captures/"
+sudo -u "$name" mkdir -p "/home/$name/pictures/wallpapers/"
+sudo -u "$name" mv "/home/$name/wallpapers/*"  "/home/$name/pictures/wallpapers"
+rm -rf "/home/$name/wallpapers"
 
 # Fix the exa error
 cp "/usr/share/zoneinfo/Europe/Athens" "/etc/localtime"
